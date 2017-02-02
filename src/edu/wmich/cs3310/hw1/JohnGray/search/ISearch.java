@@ -1,6 +1,6 @@
-package edu.wmich.cs3310.hw1.JohnGray.sort;
+package edu.wmich.cs3310.hw1.JohnGray.search;
 
-public interface ISort {
+public interface ISearch {
 		
 		public int binarySearchIterative(double[] input, double target);
 		
