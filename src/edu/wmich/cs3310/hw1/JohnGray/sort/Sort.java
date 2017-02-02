@@ -111,8 +111,43 @@ public class Sort implements ISort {
 
 	@Override
 	public int quadSearchIterative(double[] input, double target) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int upper = input.length-1;
+		int lower = 0;
+		int mid1, mid2, mid3;
+		
+		while(upper>=lower){
+			
+			mid1 = (upper+lower)/4;
+			mid2 = (2*upper+lower)/4;
+			mid3 = (3*upper+lower)/4;
+			
+			if(input[mid1]==target){
+				return mid1;
+			}
+			else if(input[mid2]==target){
+				return mid2;
+			}
+			else if(input[mid3]==target){
+				return mid3;
+			}
+			else if(input[mid1]>target){
+				upper = mid1-1;
+			}
+			else if(input[mid2]>target){
+				upper=mid2-1;
+				lower=mid1+1;
+			}
+			else if(input[mid3]>target){
+				upper=mid3-1;
+				lower=mid2+1;
+			}
+			else{
+				lower = mid3+1;
+			}
+		}
+		
+		return -1;
 	}
 
 	@Override
