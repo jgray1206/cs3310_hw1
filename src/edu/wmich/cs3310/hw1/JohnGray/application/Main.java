@@ -18,29 +18,55 @@ public class Main {
 		int loops;
 		double target;
 		
-		System.out.println("Enter upper bound of random numbers:");
-		m = scnr.nextInt();
-		System.out.println("Enter how many random numbers to generate:");
-		n = scnr.nextInt();
-		System.out.println("How many tests?");
-		loops = scnr.nextInt();
+		m = getUserDouble("Enter upper bound of random numbers: ", scnr);
+		n =	getUserInt("Enter how many random numbers to generate: ",scnr);
+		loops = getUserInt("Enter how many times to test each function: ", scnr);
 		
 		for(int i  = 0; i < loops; i++){
-		double[] input = randomSortedArray(n,m);
-		target = rand.nextDouble()*m;
-	
-	}
+			double[] input = randomSortedArray(n,m);
+			target = rand.nextDouble()*m;
+		}	
 		
 		scnr.close();
 	}
 	
 	public static double[] randomSortedArray(int n, double m){
+		
 		double[] randOutput = new double[n];
 		Random rand = new Random();
+		
 		for(int i = 0; i < n; i++){
 			randOutput[i] = (rand.nextDouble()*m);
 		}
+		
 		Arrays.sort(randOutput);
 		return randOutput;
+	}
+	
+	public static double getUserDouble(String question, Scanner scnr){
+		
+		System.out.println(question);
+		
+		try{
+			String input = scnr.nextLine();
+			double output = Double.parseDouble(input.trim());
+			return output;
+		}catch(NumberFormatException e){
+			return getUserDouble("Sorry. Please enter valid Double: ", scnr);
+		}
+	}
+	
+	public static int getUserInt(String question, Scanner scnr){
+		
+		System.out.println(question);
+		
+		try{
+			String input = scnr.nextLine();
+			int output = Integer.parseInt(input.trim());
+			return output;
+		}catch(NumberFormatException e){
+			return getUserInt("Sorry. Please enter valid Integer: ",scnr);
+		}
+		
 	}
 }

@@ -54,6 +54,7 @@ public class Sort implements ISort {
 
 	@Override
 	public int ternarySearchIterative(double[] input, double target) {
+		
 		int upper = input.length-1;
 		int lower = 0;
 		int mid1, mid2;
@@ -86,6 +87,7 @@ public class Sort implements ISort {
 
 	@Override
 	public int ternarySearchRecursive(double[] input, double target, int lower, int upper) {
+		
 		int mid1 = (upper+lower)/3;
 		int mid2 = (2*upper+lower)/3;
 		
@@ -152,6 +154,7 @@ public class Sort implements ISort {
 
 	@Override
 	public int quadSearchRecursive(double[] input, double target, int lower, int upper) {
+		
 		int mid1 = (upper+lower)/4;
 		int mid2 = (2*upper+lower)/4;
 		int mid3 = (3*upper+lower)/4;
@@ -184,7 +187,8 @@ public class Sort implements ISort {
 
 	@Override
 	public int binaryRangeSearch(double[] input, double lower, double upper) {
-		// TODO Auto-generated method stub
+
+		
 		return 0;
 	}
 
