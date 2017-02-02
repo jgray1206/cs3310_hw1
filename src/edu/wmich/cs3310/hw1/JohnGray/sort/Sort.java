@@ -152,8 +152,34 @@ public class Sort implements ISort {
 
 	@Override
 	public int quadSearchRecursive(double[] input, double target, int lower, int upper) {
-		// TODO Auto-generated method stub
-		return 0;
+		int mid1 = (upper+lower)/4;
+		int mid2 = (2*upper+lower)/4;
+		int mid3 = (3*upper+lower)/4;
+		
+		if(lower>upper){
+			return -1;
+		}
+		else if (input[mid1]==target){
+			return mid1;
+		}
+		else if(input[mid2]==target){
+			return mid2;
+		}
+		else if(input[mid3]==target){
+			return mid3;
+		}
+		else if(input[mid1]>target){
+			return quadSearchRecursive(input, target, lower, mid1-1);
+		}
+		else if(input[mid2]>target){
+			return quadSearchRecursive(input, target, mid1+1, mid2-1);
+		}
+		else if(input[mid3]>target){
+			return quadSearchRecursive(input, target, mid2+1, mid3-1);
+		}
+		else{
+			return quadSearchRecursive(input, target, mid3+1, upper);
+		}
 	}
 
 	@Override
