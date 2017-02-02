@@ -186,10 +186,16 @@ public class Sort implements ISort {
 	}
 
 	@Override
-	public int binaryRangeSearch(double[] input, double lower, double upper) {
-
+	public int binaryRangeSearch(double[] input, double target1, double target2) {
 		
-		return 0;
+		int index1 = binarySearchIterative(input, target1);
+		int index2 = binarySearchIterative(input, target2);
+		if(index1==-1||index2==-1){
+			return -1;
+		}
+		else{
+			return Math.abs(index1-index2);
+		}
 	}
 
 }
