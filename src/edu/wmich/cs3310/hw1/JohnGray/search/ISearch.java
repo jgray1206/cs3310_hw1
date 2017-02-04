@@ -2,17 +2,17 @@ package edu.wmich.cs3310.hw1.JohnGray.search;
 
 public interface ISearch {
 		
-		public int binarySearchIterative(double[] input, double target);
+		public int binarySearchIterative(float[] input, float target);
 		
-		public int binarySearchRecursive(double[] input, double target, int lower, int upper);
+		public int binarySearchRecursive(float[] input, float target, int lower, int upper);
 		
-		public int ternarySearchIterative(double[] input, double target);
+		public int ternarySearchIterative(float[] input, float target);
 		
-		public int ternarySearchRecursive(double[] input, double target, int lower, int upper);
+		public int ternarySearchRecursive(float[] input, float target, int lower, int upper);
 		
-		public int quadSearchIterative(double[] input, double target);
+		public int quadSearchIterative(float[] input, float target);
 		
-		public int quadSearchRecursive(double[] input, double target, int lower, int upper);
+		public int quadSearchRecursive(float[] input, float target, int lower, int upper);
 
-		public int binaryRangeSearch(double[]input, double lower, double upper);
+		public int binaryRangeSearch(float[]input, float lower, float upper);
 }

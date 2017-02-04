@@ -3,7 +3,7 @@ package edu.wmich.cs3310.hw1.JohnGray.search;
 public class Search implements ISearch {
 
 	@Override
-	public int binarySearchIterative(double[] input, double target) {
+	public int binarySearchIterative(float[] input, float target) {
 		
 		int upper = input.length-1;
 		int lower = 0;
@@ -30,7 +30,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public int binarySearchRecursive(double[] input, double target, int lower, int upper) {
+	public int binarySearchRecursive(float[] input, float target, int lower, int upper) {
 		
 		int mid = (lower+upper)/2;
 		
@@ -53,7 +53,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public int ternarySearchIterative(double[] input, double target) {
+	public int ternarySearchIterative(float[] input, float target) {
 		
 		int upper = input.length-1;
 		int lower = 0;
@@ -86,7 +86,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public int ternarySearchRecursive(double[] input, double target, int lower, int upper) {
+	public int ternarySearchRecursive(float[] input, float target, int lower, int upper) {
 		
 		int mid1 = (upper+lower)/3;
 		int mid2 = (2*upper+lower)/3;
@@ -112,7 +112,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public int quadSearchIterative(double[] input, double target) {
+	public int quadSearchIterative(float[] input, float target) {
 		
 		int upper = input.length-1;
 		int lower = 0;
@@ -153,7 +153,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public int quadSearchRecursive(double[] input, double target, int lower, int upper) {
+	public int quadSearchRecursive(float[] input, float target, int lower, int upper) {
 		
 		int mid1 = (upper+lower)/4;
 		int mid2 = (2*upper+lower)/4;
@@ -186,7 +186,7 @@ public class Search implements ISearch {
 	}
 
 	@Override
-	public int binaryRangeSearch(double[] input, double target1, double target2) {
+	public int binaryRangeSearch(float[] input, float target1, float target2) {
 		
 		int index1 = binarySearchIterative(input, target1);
 		int index2 = binarySearchIterative(input, target2);

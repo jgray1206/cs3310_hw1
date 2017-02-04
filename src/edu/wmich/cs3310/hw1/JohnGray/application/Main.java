@@ -14,23 +14,23 @@ public class Main {
 		Scanner scnr = new Scanner(System.in);
 		
 		int n;
-		double m;
+		float m;
 		int loops;
 		
-		m = getUserDouble("Enter upper bound of random numbers: ", scnr);
+		m = getUserFloat("Enter upper bound of random numbers: ", scnr);
 		n =	getUserInt("Enter how many random numbers to generate: ",scnr);
 		loops = getUserInt("Enter how many times to test each function: ", scnr);
 		
-		double target1;
-		double target2;
-		double[] input;
+		float target1;
+		float target2;
+		float[] input;
 		long[] outputs = new long[7];
 		long[] times = new long[7];
 		
 		for(int i  = 0; i < loops; i++){
 			input = randomSortedArray(n,m);
-			target1 = rand.nextDouble()*m;
-			target2 = rand.nextDouble()*m;
+			target1 = rand.nextFloat()*m;
+			target2 = rand.nextFloat()*m;
 			outputs = testSearches(outputs, input, target1, target2);
 			times = addArrays(times, outputs);
 		}	
@@ -58,29 +58,29 @@ public class Main {
 		return x;
 	}
 	
-	public static double[] randomSortedArray(int n, double m){
+	public static float[] randomSortedArray(int n, float m){
 		
-		double[] randOutput = new double[n];
+		float[] randOutput = new float[n];
 		Random rand = new Random();
 		
 		for(int i = 0; i < n; i++){
-			randOutput[i] = (rand.nextDouble()*m);
+			randOutput[i] = (rand.nextFloat()*m);
 		}
 		
 		Arrays.sort(randOutput);
 		return randOutput;
 	}
 	
-	public static double getUserDouble(String question, Scanner scnr){
+	public static float getUserFloat(String question, Scanner scnr){
 		
 		System.out.println(question);
 		
 		try{
 			String input = scnr.nextLine();
-			double output = Double.parseDouble(input.trim());
+			float output = Float.parseFloat(input.trim());
 			return output;
 		}catch(NumberFormatException e){
-			return getUserDouble("Sorry. Please enter valid Double: ", scnr);
+			return getUserFloat("Sorry. Please enter valid float: ", scnr);
 		}
 	}
 	
@@ -98,7 +98,7 @@ public class Main {
 		
 	}
 	
-	public static long[] testSearches(long[] outputs, double[] input, double target1, double target2){
+	public static long[] testSearches(long[] outputs, float[] input, float target1, float target2){
 		
 		Search search = new Search();
 		long begin, end;
@@ -107,9 +107,10 @@ public class Main {
 		search.binarySearchIterative(input, target1);
 		end = System.nanoTime();
 		outputs[0] = end-begin;
+
 		
 		begin = System.nanoTime();
-		search.binarySearchRecursive(input, target1, 0, input.length-1);
+		System.out.print(search.binarySearchRecursive(input, target1, 0, input.length-1));
 		end = System.nanoTime();
 		outputs[1] = end-begin;
 		
