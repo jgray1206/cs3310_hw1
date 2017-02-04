@@ -110,7 +110,7 @@ public class Main {
 
 		
 		begin = System.nanoTime();
-		System.out.print(search.binarySearchRecursive(input, target1, 0, input.length-1));
+		search.binarySearchRecursive(input, target1, 0, input.length-1);
 		end = System.nanoTime();
 		outputs[1] = end-begin;
 		
