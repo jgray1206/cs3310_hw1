@@ -99,20 +99,28 @@ public class Main {
 	 * @return Returns the random array
 	 */
 	public static float[] randomSortedArray(int n, float m){
+		//try/catch in case user inputs too big of numbers
+		try{ 
+			
+			//initialize objects
+			float[] randOutput = new float[Math.abs(n)]; //Math.abs to eliminate negative array possibility
+			Random rand = new Random();
 		
-		//initialize objects
-		float[] randOutput = new float[n];
-		Random rand = new Random();
-		
-		
-		//fill array with n random numbers in range (0,M]
-		for(int i = 0; i < n; i++){
-			randOutput[i] = (rand.nextFloat()*m);
+			
+			//fill array with n random numbers in range (0,M]
+			for(int i = 0; i < n; i++){
+				randOutput[i] = (rand.nextFloat()*m);
+			}
+			
+			//Sort array and return
+			Arrays.sort(randOutput);
+			return randOutput;
+			
+		}catch(OutOfMemoryError e){
+			System.out.println("Inputted Array size to big. Restart and try again.");
+			System.exit(0);
 		}
-		
-		//Sort array and return
-		Arrays.sort(randOutput);
-		return randOutput;
+		return null;
 	}
 	
 	/**
