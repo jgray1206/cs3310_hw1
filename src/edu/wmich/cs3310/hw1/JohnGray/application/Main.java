@@ -61,8 +61,8 @@ public class Main {
 				+ "Recursive binary search avg time: %d ns\n"
 				+ "Iterative ternary search avg time: %d ns\n"
 				+ "Recursive ternary search avg time: %d ns\n"
-				+ "Iterative quadrary search avg time: %d ns\n"
-				+ "Recursive quadrary search avg time: %d ns\n"
+				+ "Iterative quad search avg time: %d ns\n"
+				+ "Recursive quad search avg time: %d ns\n"
 				+ "Ranged binary search avg time: %d ns\n", 
 				times[0]/loops, times[1]/loops, times[2]/loops, //divides all sums by how many
 				times[3]/loops, times[4]/loops, times[5]/loops, //loops it ran, giving an average time.
