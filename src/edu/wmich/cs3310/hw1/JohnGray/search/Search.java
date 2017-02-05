@@ -1,5 +1,15 @@
 package edu.wmich.cs3310.hw1.JohnGray.search;
 
+/**
+ * This class holds all the different searches needed for this project.
+ * It contains iterative and recursive versions of binary, ternary, and
+ * quad search. It also has a ranged iterative binary search.
+ * 
+ * All Javadocs for these methods are in the ISearch interface included with
+ * this project.
+ * @author john
+ *
+ */
 public class Search implements ISearch {
 
 	@Override

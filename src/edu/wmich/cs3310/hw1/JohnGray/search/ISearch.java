@@ -2,7 +2,7 @@ package edu.wmich.cs3310.hw1.JohnGray.search;
 
 /**
  * This interface is the foundation for my class that will 
- * hold all the searches.
+ * contain all the searches needed for this project.
  * @author john
  *
  */
